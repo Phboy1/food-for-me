@@ -1,8 +1,10 @@
 import FoodCard from '../components/FoodCard';
 import { useState } from 'react';
+import {useNavigate} from "react-router-dom"
 
 function Home() {
     const[searchQuery, setSearchQuery] = useState("");
+    const navigate = useNavigate();
 
     const foods = [
         {id: 1, name: "Pasta", sweet: "1", spice: "2", salty: "3", url: ""},
@@ -20,12 +22,19 @@ function Home() {
         alert(searchQuery)
     }
 
+
+    
+
+
     return (
         <div className="home">
             <form onSubmit={handleSearch} className="search-form">
                 <input type="text" placeholder="Search for foods" className='search-input' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
                 <button type='submit' className='serach-button'>Search</button>
             </form>
+
+            <button type='button' className='search-button' onClick={() => navigate("/favourites")}>Go to Favourites</button>
+
             <div className="food-grid">
                 {foods.map((food) => (
                     
