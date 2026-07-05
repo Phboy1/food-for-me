@@ -1,5 +1,4 @@
-const API_KEY = "1"; 
-const BASE_URL = `https://www.themealdb.com/api/json/v1/${API_KEY}`;
+const BASE_URL = `https://www.themealdb.com/api/json/v1/${"1"}`;
 
 export const searchMeals = async (query) => {
     const response = await fetch(`${BASE_URL}/search.php?s=${encodeURIComponent(query)}`);

@@ -17,9 +17,8 @@ function FoodCard({food}) {
                 </div>
                 <div className="food-info">
                     <h3>{food.name}</h3>
-                    <p>{food.spice}/10</p>
-                    <p>{food.sweet}/10</p>
-                    <p>{food.salty}/10</p>
+                    <p>{food.category}</p>
+                    <p>{food.area}</p>
                 </div>
             </div>
         </>

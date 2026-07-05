@@ -1,29 +1,30 @@
 import FoodCard from '../components/FoodCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useNavigate} from "react-router-dom"
+import { searchMeals } from '../services/api';
 
 function Home() {
     const[searchQuery, setSearchQuery] = useState("");
+    const[foods, setFoods] = useState([]);
     const navigate = useNavigate();
 
-    const foods = [
-        {id: 1, name: "Pasta", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 2, name: "Bananas", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 3, name: "Bologonese", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 4, name: "Cake", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 5, name: "Columbian", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 6, name: "Chinese Chicken", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 7, name: "KBBQ", sweet: "1", spice: "2", salty: "3", url: ""},
-        {id: 8, name: "Chicken", sweet: "1", spice: "2", salty: "3", url: ""}
-    ];
+    const loadMeals = async (name) => {
+        const meals = await searchMeals(name);
+        if (!meals) {
+            setFoods([]);
+            return;
+        }
+        setFoods(meals.map((meal) => ({id: meal.idMeal, name: meal.strMeal, url: meal.strMealThumb, category: meal.strCategory, area: meal.strArea})));
+    };
+
+    useEffect(() => {
+        loadMeals("");
+    }, []);
 
     const handleSearch = (e) => {
         e.preventDefault()
-        alert(searchQuery)
+        loadMeals(searchQuery)
     }
-
-
-    
 
 
     return (
@@ -37,8 +38,7 @@ function Home() {
 
             <div className="food-grid">
                 {foods.map((food) => (
-                    
-                    food.name.toLowerCase().startsWith(searchQuery.toLowerCase()) && (<FoodCard food={food} key={food.id}/>)
+                    (food.name.toLowerCase().startsWith(searchQuery.toLowerCase())) && <FoodCard food={food} key={food.id}/>
                 ))}
             </div>
         </div>
