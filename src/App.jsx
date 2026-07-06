@@ -3,15 +3,15 @@ import FoodCard from "./components/FoodCard"
 import Home from "./pages/Home"
 import Favourites from "./pages/Favourites"
 import {Routes, Route} from "react-router-dom"
-import useState from 'react';
+import { useState, useEffect } from 'react'
+import { FoodProvider } from './contexts/FoodContext';
 
 
 function App() {
-  const [favourites, setFavourites] = useState([])
 
 
   return (
-    <>
+    <FoodProvider>
 
       <main className="main-content">
         <Routes>
@@ -20,7 +20,7 @@ function App() {
         </Routes>
       </main>
 
-    </>
+    </FoodProvider>
   );
 }
 

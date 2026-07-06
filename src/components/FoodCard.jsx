@@ -1,9 +1,16 @@
+import { useFoodContext } from "../contexts/FoodContext"
 
 function FoodCard({food}) {
+    const {favourites, isFavourite, addToFavourites, removeFromFavourites} = useFoodContext()
 
-    function onFavouriteClick() {
-        alert("clicked")
+    const favourite = isFavourite(food.id)
+
+    function onFavouriteClick(e) {
+        e.preventDefault()
+        if (favourite) removeFromFavourites(food.id)
+        else addToFavourites(food);
     }
+
     return (
         <>
             <div className="food-card">
@@ -11,8 +18,8 @@ function FoodCard({food}) {
                     <img src={food.url} alt={food.name} />
                 </div>
                 <div className="food-overlay">
-                    <button className="favourite-btn" onClick={onFavouriteClick}>
-                     ♡
+                    <button className={`favourite-btn${favourite ? " favourited" : ""}`} onClick={onFavouriteClick}>
+                     {favourite ? "♥" : "♡"}
                     </button>
                 </div>
                 <div className="food-info">

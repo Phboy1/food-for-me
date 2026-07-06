@@ -114,6 +114,10 @@
   cursor: pointer;
 }
 
+.favourite-btn.favourited {
+  color: red;
+}
+
 .food-info {
   padding: 12px 16px 16px;
 }
