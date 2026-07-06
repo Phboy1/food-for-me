@@ -12,7 +12,7 @@ function FoodCard({food}) {
                 </div>
                 <div className="food-overlay">
                     <button className="favourite-btn" onClick={onFavouriteClick}>
-                     FAVOURITE!
+                     ♡
                     </button>
                 </div>
                 <div className="food-info">
