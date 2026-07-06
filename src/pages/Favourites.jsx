@@ -9,7 +9,7 @@ function Favourites() {
     if (favourites.length > 0) {
         return (
             <>
-            <div>Your Favourite Movies!</div>
+            <div>Your Favourite Foods!</div>
             <div className="food-grid">
                 {favourites.map((food) => (
                     <FoodCard food={food} key={food.id}/>
