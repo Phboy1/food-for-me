@@ -25,3 +25,11 @@ I did use ai in this project, but only for the css styling which is just a tedio
 # Motivation
 
 I found this app called Beli which tracked which restaurants I've gone to and how I've rated them in the past. I wanted to put a spin on this and create a library all the foods that I've tried before. This is so I never have to sit there scratching my head wondering if I liked the food that I picked or not.
+
+# Screenshots
+
+<img width="1100" height="669" alt="Screenshot 2026-07-06 205541" src="https://github.com/user-attachments/assets/f4cea69b-bf28-473f-8b5d-7f0bb384cf30" />
+<img width="1320" height="839" alt="Screenshot 2026-07-06 205519" src="https://github.com/user-attachments/assets/81a67e13-245c-45c3-905d-0ada8c2d30be" />
+<img width="1103" height="588" alt="Screenshot 2026-07-06 205447" src="https://github.com/user-attachments/assets/0d0850d0-2beb-448b-b78b-e0a1abd2cc25" />
+<img width="1185" height="631" alt="Screenshot 2026-07-06 205245" src="https://github.com/user-attachments/assets/176af75d-6b5c-4fdf-9422-09ded93d7c32" />
+<img width="1082" height="674" alt="Screenshot 2026-07-06 205553" src="https://github.com/user-attachments/assets/da578745-0d4d-461c-8d9b-404212721507" />
